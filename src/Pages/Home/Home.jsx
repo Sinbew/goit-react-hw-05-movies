@@ -1,4 +1,4 @@
-import { NavLink, Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { fetchTrends } from 'api/api';
 import { useState, useEffect } from 'react';
