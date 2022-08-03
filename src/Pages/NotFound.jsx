@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-export const NotFound = () => {
+const NotFound = () => {
   return (
     <div>
       <h3>
@@ -8,3 +8,5 @@ export const NotFound = () => {
     </div>
   );
 };
+
+export default NotFound;
