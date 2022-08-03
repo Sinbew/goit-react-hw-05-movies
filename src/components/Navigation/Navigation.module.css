@@ -1,0 +1,26 @@
+.nav {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.navList {
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.activeNavLink {
+  color: rgb(255, 255, 255);
+  background-color: rgb(56, 56, 187);
+  border-radius: 5px;
+  padding: 5px 15px;
+  font-weight: 700;
+  font-size: 20px;
+}

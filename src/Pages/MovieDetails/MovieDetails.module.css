@@ -1,0 +1,36 @@
+.wrapper {
+  display: flex;
+}
+
+.descrWrapper {
+  margin-left: 50px;
+}
+
+.descrWrapper p {
+  width: 60%;
+}
+
+.btn {
+  padding: 5px 20px;
+  background-color: rgb(198, 198, 239);
+  border: transparent;
+  border-radius: 5px;
+  font-weight: 700;
+
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.link {
+  color: black;
+  padding: 5px 0;
+  font-weight: 500;
+}
+
+.link:hover {
+  color: blue;
+}
+
+.info {
+  margin-bottom: 20px;
+}
