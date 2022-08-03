@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { CastItem } from './CastItem';
 
-export const Cast = () => {
+import styles from './Cast.module.css';
+const Cast = () => {
   const { movieId } = useParams();
 
   const [cast, setCast] = useState([]);
@@ -15,7 +16,7 @@ export const Cast = () => {
   return (
     <>
       {
-        <ul>
+        <ul className={styles.list}>
           {cast.length &&
             cast.map(elem => (
               <CastItem
@@ -30,3 +31,5 @@ export const Cast = () => {
     </>
   );
 };
+
+export default Cast;

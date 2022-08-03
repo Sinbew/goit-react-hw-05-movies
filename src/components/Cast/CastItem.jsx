@@ -1,9 +1,11 @@
+import { PropTypes } from 'prop-types';
+
 export const CastItem = ({ name, img, character }) => {
   return (
     <>
       <li>
         <img
-          width="500"
+          width="200"
           src={
             img
               ? `https://image.tmdb.org/t/p/w500${img}`
@@ -16,4 +18,10 @@ export const CastItem = ({ name, img, character }) => {
       </li>
     </>
   );
+};
+
+CastItem.propTypes = {
+  name: PropTypes.string.isRequired,
+  img: PropTypes.string,
+  character: PropTypes.string.isRequired,
 };

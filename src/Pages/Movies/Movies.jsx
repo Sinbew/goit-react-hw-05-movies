@@ -6,7 +6,7 @@ import { getSerchMovies } from 'api/api';
 import { Link } from 'react-router-dom';
 import styles from './Movies.module.css';
 import { toast } from 'react-toastify';
-export const Movies = () => {
+const Movies = () => {
   // const queryObj = useMemo(() => Object.fromEntries([...query]), [query]);
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -54,16 +54,17 @@ export const Movies = () => {
             {searchFilm.map(el => {
               return (
                 <li key={el.id}>
-                  <img
-                    width="500"
-                    src={
-                      el.poster_path
-                        ? `https://image.tmdb.org/t/p/w500${el.poster_path}`
-                        : "'https://s1.hostingkartinok.com/uploads/images/2022/07/40ceaea2e22257d2a139ca5a0c0b8ba9.jpg'"
-                    }
-                    alt={el.name}
-                  />
                   <Link state={{ from: location }} to={`/movies/${el.id}`}>
+                    <img
+                      width="500"
+                      src={
+                        el.poster_path
+                          ? `https://image.tmdb.org/t/p/w500${el.poster_path}`
+                          : "'https://s1.hostingkartinok.com/uploads/images/2022/07/40ceaea2e22257d2a139ca5a0c0b8ba9.jpg'"
+                      }
+                      alt={el.name}
+                    />
+
                     <p>{el.title ? el.title : el.name}</p>
                   </Link>
                 </li>
@@ -77,3 +78,5 @@ export const Movies = () => {
     </>
   );
 };
+
+export default Movies;

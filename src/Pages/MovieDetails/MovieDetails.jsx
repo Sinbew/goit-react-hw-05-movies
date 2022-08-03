@@ -9,7 +9,8 @@ import {
 } from 'react-router-dom';
 
 import styles from './MovieDetails.module.css';
-export const MovieDetails = () => {
+
+const MovieDetails = () => {
   const { movieId } = useParams();
   const location = useLocation();
   const navigate = useNavigate();
@@ -21,20 +22,18 @@ export const MovieDetails = () => {
   }, [movieId]);
 
   return (
-    /////////////////////////////////////////// Уточнить на счет <Link state={{ from: location?.state?.from ?? '/' }} to="reviews">
     <>
       {movieInfo ? (
         <>
+          <button
+            className={styles.btn}
+            onClick={() => navigate(location?.state?.from ?? '/')}
+          >
+            Go back
+          </button>
+          <hr />
           <div className={styles.wrapper}>
-            <hr />
-
             <div>
-              <button
-                className={styles.btn}
-                onClick={() => navigate(location?.state?.from ?? '/')}
-              >
-                Go back
-              </button>
               <img
                 width="500"
                 src={
@@ -49,7 +48,10 @@ export const MovieDetails = () => {
               <h2>
                 {movieInfo.title} ({movieInfo.release_date.slice(0, 4)})
               </h2>
-              <h3>User score: {movieInfo.vote_average}</h3>
+              <h3>
+                User score:{' '}
+                {Math.ceil(Number(movieInfo.vote_average) * 10) + '%'}
+              </h3>
               <h3>Overview</h3>
               <p>{movieInfo.overview}</p>
               <h3>Genres</h3>
@@ -87,3 +89,5 @@ export const MovieDetails = () => {
     </>
   );
 };
+
+export default MovieDetails;

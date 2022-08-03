@@ -2,7 +2,9 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getRewiesMovies } from 'api/api';
 import { ReviewsItem } from './ReviewsItem';
-export const Reviews = () => {
+
+import styles from './Reviews.module.css';
+const Reviews = () => {
   const { movieId } = useParams();
 
   const [review, setReview] = useState([]);
@@ -14,7 +16,7 @@ export const Reviews = () => {
   return (
     <>
       {review.length ? (
-        <ul>
+        <ul className={styles.list}>
           {review.length &&
             review.map(el => {
               return (
@@ -32,3 +34,5 @@ export const Reviews = () => {
     </>
   );
 };
+
+export default Reviews;
